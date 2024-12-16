@@ -1,15 +1,17 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
+import Login from './components/Login';
 import Dashboard from './pages/Dashboard';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Dashboard />} />
-          {/* Other routes will be added as we implement more features */}
+        <Route path="/" element={<Login />}>
+        </Route>
+        <Route path="/dashboard" element={<Layout />}>
+        <Route index element={<Dashboard />}/>
         </Route>
       </Routes>
     </BrowserRouter>
