@@ -1,14 +1,15 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { BookOpen, Brain, BarChart2 } from 'lucide-react';
+import { BookOpen, Brain, BarChart2, CircleUserRound } from 'lucide-react';
 
 const Navigation = () => {
   const location = useLocation();
   
   const links = [
-    { to: '/', label: 'Dashboard', icon: Brain },
+    { to: '/dashboard', label: 'Dashboard', icon: Brain },
     { to: '/materials', label: 'Study Materials', icon: BookOpen },
     { to: '/progress', label: 'Progress', icon: BarChart2 },
+    { to: '/userprofile', label: 'Profile', icon: CircleUserRound },
   ];
   
   return (
