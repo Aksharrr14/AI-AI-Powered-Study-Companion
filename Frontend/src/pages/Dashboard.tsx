@@ -1,9 +1,35 @@
 import React from 'react';
 import { useStore } from '../store/useStore';
 import { PlusCircle, BookOpen, Award } from 'lucide-react';
+import Box from '@mui/material/Box';
+import Modal from '@mui/material/Modal';
+import Button from '@mui/material/Button';
+import NestedModal from '../components/UploadPopup';
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  pt: 2,
+  px: 4,
+  pb: 3,
+};
+
 
 export default function Dashboard() {
   const { materials, progress } = useStore();
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
   
   const stats = [
     {
@@ -66,11 +92,13 @@ export default function Dashboard() {
           </div>
           <div className="mt-5">
             <button
+              
               type="button"
               className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
               <PlusCircle className="h-5 w-5 mr-2" />
-              Add Study Material
+              <NestedModal/>
+             
             </button>
           </div>
         </div>
