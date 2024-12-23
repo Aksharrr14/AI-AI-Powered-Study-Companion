@@ -14,8 +14,8 @@ import Stack from '@mui/material/Stack';
 import MuiCard from '@mui/material/Card';
 import { styled } from '@mui/material/styles';
 // import ForgotPassword from './ForgotPassword';
-import { GoogleIcon, FacebookIcon, SitemarkIcon } from '../utils/CustomIcons';
-import { BookOpen, Brain, BarChart2 } from 'lucide-react';
+import { GoogleIcon, FacebookIcon } from '../utils/CustomIcons';
+import { Brain} from 'lucide-react';
 
 // import AppTheme from '../shared-theme/AppTheme';
 // import ColorModeSelect from '../shared-theme/ColorModeSelect';
