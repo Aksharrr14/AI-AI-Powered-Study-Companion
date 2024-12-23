@@ -9,10 +9,10 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
+  width: 500,
   bgcolor: 'background.paper',
-  border: '2px solid #000',
-  boxShadow: 24,
+  border: '2px solid #666',
+  boxShadow: 5,
   pt: 2,
   px: 4,
   pb: 3,
@@ -37,18 +37,23 @@ function FileUpload() {
 
   return (
     <Box>
-      <input
+      <input 
         type="file"
         onChange={handleFileChange}
-        style={{ display: 'block', marginBottom: '10px' }}
+        style={{ display: 'block', marginBottom: '10px', marginTop: '50px'}}
       />
-      <Button
+      <div className='flex justify-center'>
+      <Button 
         variant="contained"
         onClick={handleFileUpload}
         disabled={!selectedFile}
+        style={{
+          marginTop: 25,
+        }}
       >
         Upload File
       </Button>
+      </div>
     </Box>
   );
 }
@@ -89,11 +94,10 @@ export default function NestedModal() {
         aria-labelledby="parent-modal-title"
         aria-describedby="parent-modal-description"
       >
-        <Box sx={{ ...style, width: 400 }}>
-          <p id="parent-modal-description" style={{margin:10 , color:"blue" , font:"message-box"}}>
-            Choose files to upload from your device.
-
-          </p>
+        <Box sx={{ ...style, width: 500 }}>
+        <h1 id="parent-modal-description" className="text-lg mb-2 text-indigo-600 font-roboto text-center">
+          Choose a file to upload from your device
+        </h1>
           <FileUpload />
           <ChildModal />
         </Box>
